@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menuR</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ファビコン -->
+    <link rel="apple-touch-icon" sizes="152x152" href="../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../image/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../image/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <a href="../index.html"><img src="image/wakuzawa-wh.png" alt="ワクザワ"></a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#model">モデル例</a></li>
+                    <li><a href="#process">導入の流れ</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <!-- ハンバーガー ---------------------------------------------->
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-btn-check" class="unshown">
+                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                <label class="unshown" id="nav-close" for="menu-btn-check"></label>
+                
+                <!--ここからメニュー-->
+                <div class="menu-content" id="menu-content">
+                    <ul>
+                        <li>
+                            <a href="#model">モデル例</a>
+                        </li>
+                        <li>
+                            <a href="#process">導入の流れ</a>
+                        </li>
+                        <li>
+                            <a href="#contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    $(function() {
+                      $('#menu-content li a').on('click', function(event) {
+                        $('#menu-btn-check').prop('checked', false);
+                      });
+                    });
+                </script>
+                <!--ここまでメニュー-->
+            </div>
+        </div>
+    </header>
+
+    <!-- main ---------------------------------------------------------------------------------------->
+    <main>
+        <h1>menuRとは</h1>
+        <p class="description-text">デバイス(スマホ/タブレット)をかざすことで、
+            "その場で" "実物大の"メニューを確認することができるサービスです。</p>
+        <!-- 
+        <div class="iframe">
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/hUgxFq2Yavg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="how-to-see">モデルの閲覧方法</p>
+         -->
+
+        <h2 id="model">モデル例</h2>
+        <div class="container">
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="neapolitan" 
+                class="model-viewer"
+                ios-src="model/neapolitan.usdz"
+                src="model/neapolitan.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="neapolitan-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">ナポリタン</p>
+                </button>
+                <p class="food-name-pc">ナポリタン</p>
+            </div>
+            
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="currybread" 
+                class="model-viewer"
+                ios-src="model/currybread.usdz"
+                src="model/currybread.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="currybread-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">カレーパン</p>
+                </button>
+                <p class="food-name-pc">カレーパン</p>
+            </div>
+            
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="butterroll" 
+                class="model-viewer"
+                ios-src="model/butterroll.usdz"
+                src="model/butterroll.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="butterroll-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">バターロール</p>
+                </button>
+                <p class="food-name-pc">バターロール</p>
+            </div>
+
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="hamburger" 
+                class="model-viewer"
+                ios-src="model/hamburger.usdz"
+                src="model/hamburger.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="hamburger-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">ハンバーガー</p>
+                </button>
+                <p class="food-name-pc">ハンバーガー</p>
+            </div>
+                        
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="shortcake" 
+                class="model-viewer"
+                ios-src="model/shortcake.usdz"
+                src="model/shortcake.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                camera-orbit = "315deg 90deg 100%"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="shortcake-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">ショートケーキ</p>
+                </button>
+                <p class="food-name-pc">ショートケーキ</p>
+            </div>
+            
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="montblanc" 
+                class="model-viewer"
+                ios-src="model/montblanc.usdz"
+                src="model/montblanc.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="montblanc-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">モンブラン</p>
+                </button>
+                <p class="food-name-pc">モンブラン</p>
+            </div>
+            
+            <div class="item">
+                <!-- id,ios-src,srcは要変更 -->
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="creampuff" 
+                class="model-viewer"
+                ios-src="model/creampuff.usdz"
+                src="model/creampuff.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <!-- id,food-nameは要変更 -->
+                <button class="food-btn" id="creampuff-btn">
+                    <p class="btn-induction">タップしてAR表示</p>
+                    <p class="food-name">シュークリーム</p>
+                </button>
+                <p class="food-name-pc">シュークリーム</p>
+            </div>
+
+        </div>
+
+        <!-- price --------------------------------------------------
+        <h3 id="price">料金</h3>
+        <table>
+            <tr>
+                <td>撮影料</td>               
+                <td>¥80,000/1回</td>
+            </tr>
+            <tr>
+                <td>モデル製作費</td>
+                <td>¥15,000/1点<span>※1</span></td>
+            </tr>
+            <tr>
+                <td>交通費</td>
+                <td>別途<span>※2</span></td>
+            </tr>
+        </table>
+        <div class="price-message">
+            <p>※1　1回あたり5点以上にて承っております</p>
+            <p>※2　東京駅起算にて片道¥1,000以上の場合は払ってね</p>
+        </div>
+        ----------------------------------------------------------->
+
+        <!-- 導入の流れ -------------------------------------------->
+        <h4 id="process">導入の流れ</h4>
+        <div class="process-figures">
+            <div class="process-item">
+                <img src="image/photography.webp" alt="撮影">
+                <div class="process-style">
+                    <p class="process-top">写真撮影</p>
+                    <p class="process-sentence">食品の撮影を行います</p>
+                </div>
+            </div>
+
+            <img src="image/arrow-right.webp" alt="arrow-right" class="arrow right">
+            <img src="image/arrow-bottom.png" alt="arrow-bottom" class="arrow bottom">
+
+            <div class="process-item">
+                <img src="image/modeling.webp" alt="modeling">
+                <div class="process-style">
+                    <p class="process-top">フォトグラメトリ</p>
+                    <p class="process-sentence">撮影した写真から3Dモデルを制作します</p>
+                </div>
+            </div>
+
+            <img src="image/arrow-right.webp" alt="arrow-right" class="arrow right">
+            <img src="image/arrow-bottom.png" alt="arrow-bottom" class="arrow bottom">
+
+            <div class="process-item">
+                <img src="image/delivery.webp" alt="delivery">
+                <div class="process-style">
+                    <p class="process-top">納品</p>
+                    <p class="process-sentence">3Dモデルのデータとコードをお渡しします</p>
+                </div>
+            </div>
+        </div>
+        <p class="process-detail">
+            写真撮影から納品までワンストップで開発<br>
+            撮影から約1ヶ月でARメニューが完成<br>
+        </p>
+        <p class="process-caution">
+            ※ 期間・料金は作成点数/仕様によって変動いたします<br>
+            ※ HPの作成もご希望の場合は別途費用がかかります
+        </p>
+
+        <h5 id="contact">お問い合わせ</h5>
+        <div class="contact">
+            <p>お仕事やお見積もりのご依頼、ご相談を承ります。<br>
+                お気軽にお問い合わせください。</p>
+            <a href="https://forms.gle/rD6qf4cWqHeWcRTVA" class="contact-btn">お問い合わせ</a>
+            <p>合同会社ワクザワ<br>
+        </div>
+    </main>
+
+    <footer>
+        <p><small>&copy;wakuzawa-inc.All Rights Reserved</small></p>
+    </footer>
+
+    <!-- bodyタグ内の任意の位置に配置-->
+    <script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script>
+        document.querySelector('#neapolitan-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#neapolitan");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#currybread-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#currybread");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#butterroll-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#butterroll");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#hamburger-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#hamburger");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#shortcake-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#shortcake");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#montblanc-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#montblanc");
+          modelViewer.activateAR();
+        });
+
+        document.querySelector('#creampuff-btn').addEventListener('click', (event) => {
+          const modelViewer = document.querySelector("#creampuff");
+          modelViewer.activateAR();
+        });
+
+
+      </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,524 @@
+@charset "UFT-8";
+
+/* 共通部分 */
+* {
+  box-sizing: border-box; /*padding,borderはwidthに含む*/
+}
+html {
+  font-size: 100%;
+}
+body {
+  font-family: sans-serif, "メイリオ", "Meiryo";
+  line-height: 1.7;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* header */
+header {
+  height: 70px;
+  width: 100vw;
+  background-color: #da6a36;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+/* --------------------------ハンバーガー----------------------------------- */
+/* ボタン実装 */
+.menu-btn {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  display: flex;
+  height: 70px;
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+  background-color: #da6a36;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+
+/* ボタンの×マーク */
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.unshown {
+  display: none; /* チェックボックス隠す */
+}
+
+/* メニュー装飾 */
+.menu-content ul {
+  padding: 36px 10px 0;
+}
+.menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+.menu-content ul li a {
+  display: block;
+  width: 70%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  margin-bottom: 5px;
+  position: relative;
+}
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  background-color: #da6a36;
+}
+/* メニューをいったん外へ */
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 70px;
+  left: 100%; /*leftの値を変更してメニューを画面外へ*/
+  z-index: 7;
+  background-color: #da6a36;
+  transition: all 0.2s; /*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+  top: 70px;
+  left: 30%; /*ボタンタップでメニューを画面内へ*/
+}
+/*閉じる用の薄黒箇所*/
+#nav-close {
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+}
+/* 黒いとこいったん外へ */
+#nav-close {
+  position: fixed;
+  z-index: 11;
+  top: 70px;
+  right: 100%; /*rightの値を変更してメニューを画面外へ*/
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  transition: all 0.2s; /*アニメーション設定*/
+}
+/*チェックがついたら表示させる*/
+#menu-btn-check:checked ~ #nav-close {
+  top: 70px;
+  right: 70%; /*ボタンタップでメニューを画面内へ*/
+  display: block;
+}
+/* ここまでハンバーガー--------------------------------------------------- */
+
+/* いい感じに真ん中寄せ */
+.wrapper {
+  height: 70px;
+  width: 92vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+header img {
+  padding-top: 8px;
+  width: 210px;
+}
+.main-nav {
+  margin: 0 0 0 auto;
+  display: flex;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  list-style: none;
+}
+.main-nav li {
+  margin-right: 20px;
+}
+.main-nav a {
+  display: block;
+  color: white;
+}
+.main-nav a:hover {
+  color: rgb(197, 197, 197);
+}
+
+/* main--------------------------------- */
+main {
+  margin: 0 auto;
+  width: 92vw;
+  color: gray;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 30px 0 50px 0;
+  padding-top: 70px;
+  color: #da6a36;
+  font-size: 2rem;
+  border-bottom: 2px solid #da6a36;
+}
+
+/* menuRとは------------------------------ */
+.description-text {
+  margin-bottom: 36px;
+}
+
+/* モデル一覧---------------------------- */
+.container {
+  margin: 36px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item {
+  margin-bottom: 5vw;
+  padding: 0;
+  border: 2px solid #da6a36;
+  border-radius: 5px;
+  width: 28vw;
+  height: 40vw;
+}
+.item model-viewer {
+  padding: 5px;
+  width: 28vw;
+  height: 30vw;
+}
+.food-btn {
+  display: none;
+}
+.custom-ar-button {
+  width: 0;
+  height: 0;
+}
+.food-name-pc {
+  width: calc(28vw - 2.5px);
+  height: 10vw;
+  color: white;
+  background: #da6a36;
+  border-radius: 0 0 5px 5px;
+  font-size: 3.5vw;
+  line-height: 10vw;
+}
+
+/* 料金 
+table {
+    font-size: 1.75rem;
+    margin: 0 auto;
+    table-layout: fixed;
+
+}
+td {
+    white-space: nowrap;
+}
+td span {
+    font-size: 1rem;
+}
+.price-message {
+    margin: 36px auto;
+}
+*/
+
+/* 導入の流れ--------------------------------- */
+.process-figures {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: flex-start;
+}
+.process-item {
+  width: 25.7vw;
+}
+.process-top {
+  font-size: 2.5vw;
+}
+.process-sentence {
+  font-size: 1.2vw;
+}
+.arrow {
+  width: 7.4vw;
+}
+.bottom {
+  display: none;
+}
+.process-detail {
+  margin-bottom: 16px;
+}
+
+/* お問い合わせ----------------------------- */
+.contact {
+  margin: 36px 0;
+}
+.contact-btn {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background: #da6a36;
+  color: #ffffff;
+  border-radius: 2.2rem;
+}
+.contact-btn:hover {
+  background: #ec804e;
+}
+.contact-btn:active {
+  position: relative;
+  top: 4px;
+  box-shadow: none;
+}
+
+footer {
+  background-color: #ccc;
+  color: black;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* media queries--------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  header img {
+    padding-top: 8px;
+    height: 54px;
+    width: auto;
+  }
+
+  main {
+    padding: 0;
+    width: 92vw;
+  }
+
+  /* モデルを縦並び------------------------ */
+  .container {
+    margin: 36px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .item {
+    margin-bottom: 5vw;
+    padding: 0;
+    border: 2px solid #da6a36;
+    border-radius: 5px;
+    width: 92vw;
+    height: 120vw;
+  }
+  .item model-viewer {
+    padding: 7px;
+    width: 90vw;
+    height: 92vw;
+  }
+  .food-btn {
+    display: block;
+    width: calc(92vw - 2.5px);
+    height: 28vw;
+    color: white;
+    background: #da6a36;
+    border-radius: 0 0 5px 5px;
+  }
+  .custom-ar-button {
+    width: 0;
+    height: 0;
+  }
+
+  button .btn-induction {
+    width: calc(92vw - 2.5px);
+    height: 8vw;
+    background: #da6a36;
+    font-size: 5vw;
+  }
+  button .food-name {
+    width: calc(92vw - 2.5px);
+    height: 18vw;
+    background: #da6a36;
+    border-radius: 0 0 5px 5px;
+    font-size: 10vw;
+  }
+
+  .food-name-pc {
+    display: none;
+  }
+
+  /* 導入図を縦並び----------------------- */
+  .process-figures {
+    margin-bottom: 50px;
+    display: block;
+    width: 92vw;
+    height: auto;
+  }
+  .process-item {
+    width: 92vw;
+    height: 30vw;
+    display: flex;
+  }
+  img {
+    width: 36vw;
+    height: 30vw;
+  }
+  .process-style {
+    width: 56vw;
+    height: 30vw;
+  }
+  .process-top {
+    font-size: 6vw;
+  }
+  .process-sentence {
+    font-size: 4vw;
+  }
+  .bottom {
+    display: none;
+  }
+  .process-detail {
+    margin-bottom: 5vh;
+    font-size: 4.5vw;
+  }
+  .process-caution {
+    font-size: 3.5vw;
+  }
+
+  .right {
+    display: none;
+  }
+  .bottom {
+    display: block;
+  }
+  .process-item {
+    width: 100%;
+  }
+  .arrow {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+
+  .contact p {
+    font-size: 4vw;
+  }
+  /* ヘッダーのリスト非表示 */
+  nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* モデル一覧---------------------------- */
+  .container {
+    margin: 36px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    margin-bottom: 5vw;
+    padding: 0;
+    border: 2px solid #da6a36;
+    border-radius: 5px;
+    width: 28vw;
+    height: 40vw;
+  }
+  .item model-viewer {
+    padding: 5px;
+    width: 28vw;
+    height: 30vw;
+  }
+
+  .food-btn {
+    display: block;
+    width: calc(28vw - 2.5px);
+    height: 10vw;
+    color: white;
+    background: #da6a36;
+    border-radius: 0 0 5px 5px;
+  }
+  .custom-ar-button {
+    width: 0;
+    height: 0;
+  }
+
+  button .btn-induction {
+    width: calc(28vw - 2.5px);
+    height: 3vw;
+    background: #da6a36;
+    font-size: 2.5vw;
+  }
+  button .food-name {
+    width: calc(28vw - 2.5px);
+    height: 7vw;
+    background: #da6a36;
+    border-radius: 0 0 5px 5px;
+    font-size: 3.5vw;
+  }
+
+  .food-name-pc {
+    display: none;
+  }
+}
+@media (min-width: 601px) {
+  .hamburger-menu {
+    display: none;
+  }
+}

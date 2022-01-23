@@ -1,0 +1,440 @@
+@charset "UTF-8";
+/* 共通部分 */
+html {
+  font-size: 1rem;
+}
+
+html body {
+  font-family: sans-serif, "メイリオ", "Meiryo";
+  line-height: 1.7;
+  text-align: left;
+}
+
+html body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*padding,borderはwidthに含む*/
+}
+
+html body * a {
+  text-decoration: none;
+  /*下線引かない*/
+  display: block;
+  /*ブロック要素に*/
+  color: #000;
+}
+
+html body img {
+  max-width: 100%;
+  /*画像がはみ出さないように*/
+}
+
+html body ul {
+  list-style-type: none;
+  /*listに黒点つけない*/
+}
+
+html body header {
+  height: 15vh;
+  width: 100vw;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+html body header .wakuzawa-logo {
+  margin: 6.6vh auto auto 5.3vw;
+  width: 18vw;
+}
+
+html body header .header-list {
+  margin-right: 0.8vw;
+  width: 32.4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  /*ブロックを下揃え*/
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  /*右揃え*/
+}
+
+html body header .header-list li {
+  margin-right: 3.6vw;
+}
+
+html body header .header-list li a {
+  font-size: 1.7vw;
+  color: #000;
+}
+
+html body main {
+  margin: 0 22.1vw 0 23.3vw;
+}
+
+html body main .dressr-title {
+  margin: 0 27.3vw 3.7vh 0;
+  padding-top: 20vh;
+  border-bottom: 1px solid grey;
+  font-size: 2vw;
+}
+
+html body main .dressr-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body main .dressr-container img {
+  width: 17.1vw;
+  height: 32vw;
+}
+
+html body main .instagram-btn {
+  height: 4.1vh;
+  width: 15.2vw;
+  margin-top: 0.9vh;
+  text-align: center;
+  /*左右真ん中寄せ*/
+  line-height: 4.1vh;
+  /*上下真ん中寄せ*/
+  background-color: #727272;
+  font-size: 1.3vw;
+  opacity: 1;
+  cursor: pointer;
+  /*カーソル乗せると指になる*/
+}
+
+html body main .instagram-btn:hover {
+  opacity: 0.8;
+}
+
+html body main .instagram-btn:active {
+  position: relative;
+  top: 5px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body main .instagram-btn a {
+  color: #fff;
+}
+
+html body main .dressr-sentence {
+  margin-top: 4.6vh;
+}
+
+html body main .process {
+  margin-top: 3.7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body main .process .arrow .arrow-bottom {
+  display: none;
+}
+
+html body main .process .process-item .process-style .process-top {
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+
+html body main .process .process-item .process-style .process-sentence {
+  margin-top: 2.2vh;
+  font-size: 1.1vw;
+}
+
+html body main .contact-btn {
+  height: 6.9vh;
+  width: 26.6vw;
+  margin: 7vh 0 7vh auto;
+  /*ボタンを右寄せ*/
+  background-color: #000;
+  opacity: 1;
+  cursor: pointer;
+  /*カーソル乗せると指になる*/
+}
+
+html body main .contact-btn a {
+  height: 6.9vh;
+  width: 26.6vw;
+  text-align: center;
+  line-height: 6.9vh;
+  /*テキストを縦に中央揃え*/
+  color: #fff;
+  font-size: 2.5vw;
+}
+
+html body main .contact-btn:hover {
+  opacity: 0.8;
+}
+
+html body main .contact-btn:active {
+  position: relative;
+  top: 5px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body main .ar-title {
+  margin: 0 27.3vw 3.7vh 0;
+  padding-top: 20vh;
+  border-bottom: 1px solid grey;
+  font-size: 2vw;
+}
+
+html body main .ar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body main .ar-container .ar-item {
+  /* widthやheightの値は要カスタマイズ -----------------------------------------------*/
+}
+
+html body main .ar-container .ar-item .model-viewer {
+  width: 17.1vw;
+  height: 20.5vw;
+  background-color: #fff;
+}
+
+html body main .ar-container .ar-item .model-viewer .custom-ar-button {
+  width: 0;
+  height: 0;
+}
+
+html body main .ar-sentence {
+  margin-top: 4vw;
+}
+
+html body .contact-btn {
+  height: 6.9vh;
+  width: 26.6vw;
+  margin: 7vh 0 7vh auto;
+  /*ボタンを右寄せ*/
+  background-color: #000;
+  opacity: 1;
+  cursor: pointer;
+  /*カーソル乗せると指になる*/
+}
+
+html body .contact-btn a {
+  height: 6.9vh;
+  width: 26.6vw;
+  text-align: center;
+  line-height: 6.9vh;
+  /*テキストを縦に中央揃え*/
+  color: #fff;
+  font-size: 2.5vw;
+}
+
+html body .contact-btn:hover {
+  opacity: 0.8;
+}
+
+html body .contact-btn:active {
+  position: relative;
+  top: 5px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body footer {
+  margin-top: 10vh;
+  background-color: #ccc;
+  color: black;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 600px) {
+  /*----------------------------------------------------------------------------------------*/
+  html body header {
+    height: 9.2vh;
+  }
+  html body header .wakuzawa-logo {
+    width: 25vw;
+    margin: auto auto 1vh 5.3vw;
+  }
+  html body header .header-list {
+    margin-right: 0.8vw;
+    margin-bottom: 2vh;
+    width: 60vw;
+  }
+  html body header .header-list li {
+    margin-right: 3.6vw;
+  }
+  html body header .header-list li a {
+    font-size: 3vw;
+  }
+  html body main {
+    margin: 0 18vw 0 18vw;
+  }
+  html body main .dressr-title {
+    margin: 0 0 3.7vh 0;
+    padding-top: 13vh;
+    border-bottom: 1px solid grey;
+    font-size: 5vw;
+  }
+  html body main .dressr-container img {
+    width: 20vw;
+  }
+  html body main .instagram-btn {
+    width: 32vw;
+    font-size: 3vw;
+    -webkit-box-shadow: 0 4px #dddddd;
+            box-shadow: 0 4px #dddddd;
+  }
+  html body main .instagram-btn:active {
+    top: 3px;
+  }
+  html body main .dressr-sentence {
+    margin-top: 3vh;
+    font-size: 3vw;
+  }
+  html body main .process {
+    display: block;
+    /*フレックスボックス解除*/
+    margin-top: 6vh;
+  }
+  html body main .process .arrow .arrow-right {
+    display: none;
+    /*右矢印削除*/
+  }
+  html body main .process .arrow .arrow-bottom {
+    display: block;
+  }
+  html body main .process .process-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    /*両端揃えて均等配置*/
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /*ブロックを中段揃え*/
+  }
+  html body main .process .process-item img {
+    width: 31vw;
+  }
+  html body main .process .process-item .process-style {
+    width: 31vw;
+  }
+  html body main .process .process-item .process-style .process-top {
+    font-size: 3.5vw;
+  }
+  html body main .process .process-item .process-style .process-sentence {
+    margin-top: 2vh;
+    font-size: 3vw;
+  }
+  html body main .contact-btn {
+    height: 5vh;
+    width: 32vw;
+    margin: 4vh 0 7vh auto;
+    /*ボタンを右寄せ*/
+    -webkit-box-shadow: 0 3px #525252;
+            box-shadow: 0 3px #525252;
+  }
+  html body main .contact-btn a {
+    height: 5vh;
+    width: 32vw;
+    line-height: 5vh;
+    /*テキストを縦に中央揃え*/
+    font-size: 4vw;
+  }
+  html body main .contact-btn:active {
+    top: 3px;
+  }
+  html body main .ar-title {
+    margin: 0 0 3.7vh 0;
+    padding-top: 13vh;
+    border-bottom: 1px solid grey;
+    font-size: 5vw;
+  }
+  html body main .ar-container {
+    display: block;
+    /*flexbox解除*/
+  }
+  html body main .ar-container .ar-item {
+    /* widthやheightの値は要カスタマイズ -----------------------------------------------*/
+  }
+  html body main .ar-container .ar-item .model-viewer {
+    width: 64vw;
+    height: 75vw;
+    margin-bottom: 4px;
+    background-color: #fff;
+  }
+  html body main .ar-container .ar-item .model-viewer .custom-ar-button {
+    width: 0;
+    height: 0;
+  }
+  html body main .ar-container .ar-item .model-viewer-btn {
+    display: block;
+    width: 64vw;
+    height: 5vh;
+    font-weight: bold;
+    line-height: 5vh;
+    color: white;
+    background-color: #525252;
+    border: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .custom-ar-button {
+    width: 0;
+    height: 0;
+  }
+  .model-viewer-btn {
+    display: block;
+    width: 17.1vw;
+    height: 5vh;
+    font-weight: bold;
+    line-height: 5vh;
+    color: white;
+    background-color: #525252;
+    border: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .model-viewer-btn {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

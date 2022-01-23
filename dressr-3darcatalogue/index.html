@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dressR 3D/ARcatalogue</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="wakuzawa-logo"><img src="image/wakuzawa-bl.png" alt="ワクザワ"></a>
+        <ul class="header-list">
+            <li><a href="#dressr-title">dressR</a></li>
+            <li><a href="#ar-title">3D/AR CATALOGUE</a></li>
+        </ul>
+
+    </header>
+
+    <main>
+        <h1 class="dressr-title" id="dressr-title">dressR</h1>    <!-- dressR -->
+
+        <div class="dressr-container">
+            <img src="image/dressr-l.png" alt="dressr-l">
+            <img src="image/dressr-c.png" alt="dressr-c">
+            <img src="image/dressr-r.png" alt="dressr-r">
+        </div>
+
+        <!-- <div class="instagram-btn">
+            <a href="https://www.instagram.com/ar/2991277431099284">Instagramで体験する</a>            
+        </div> -->
+
+        <p class="dressr-sentence">
+            SNS上でアクセサリー類の試着が可能になるフィルターを提供。
+        </p>
+
+        <div class="process">
+            <div class="process-item">
+                <img src="image/photography-dress.png" alt="写真撮影">
+                <div class="process-style">
+                    <p class="process-top">写真撮影</p>
+                    <p class="process-sentence">商品の撮影を行います</p>
+                </div>
+            </div>
+            
+            <div class="arrow">
+                <img src="image/arrow-right.png" class="arrow-right" alt="右">
+                <img src="image/arrow-bottom.png" class="arrow-bottom" alt="下">
+            </div>
+
+            <div class="process-item">
+                <img src="image/modeling-dress.png" alt="フォトグラメトリ">
+                <div class="process-style">
+                    <p class="process-top">フォトグラメトリ</p>
+                    <p class="process-sentence">撮影した写真から３Ｄモデルを制作します</p>
+                </div>
+            </div>
+            
+            <div class="arrow">
+                <img src="image/arrow-right.png" class="arrow-right" alt="右">
+                <img src="image/arrow-bottom.png" class="arrow-bottom" alt="下">
+            </div>
+
+            <div class="process-item">
+                <img src="image/ar-dress.png" alt="AR化">
+                <div class="process-style">
+                    <p class="process-top">AR化</p>
+                    <p class="process-sentence">ARを表示するサイトを作成いたします</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-btn">
+            <a href="https://forms.gle/wNEXXybLcJn3djKK6">CONTACT</a>
+        </div>
+
+        <h2 class="ar-title" id="ar-title">3D/AR CATALOGUE</h2>    <!-- 3D/AR-catalogue -->
+
+        <div class="ar-container">  <!--mv------------------------------------------>
+            <div class="ar-item">
+                <!-- slick.jsアイテム-->
+                <model-viewer
+                id="model1"
+                class="model-viewer"
+                ios-src="model/skirt.usdz"
+                src="model/skirt.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model1-btn">
+                    START AR
+                </button>
+    
+            </div>
+
+            <div class="ar-item">
+                <model-viewer
+                id="model2"
+                class="model-viewer"
+                ios-src="model/hoodie.usdz"
+                src="model/hoodie.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model2-btn">
+                    START AR
+                </button>
+
+            </div>
+
+            <div class="ar-item">
+                <model-viewer
+                id="model3"
+                class="model-viewer"
+                ios-src="model/sweater.usdz"
+                src="model/sweater.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model3-btn">
+                    START AR
+                </button>
+
+            </div>
+
+            <div class="ar-item">
+                <model-viewer
+                id="model4"
+                class="model-viewer"
+                ios-src="model/gassyou.usdz"
+                src="model/gassyou.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model4-btn">
+                    START AR
+                </button>
+
+            </div>
+
+            <!-- <div class="ar-item">
+                <model-viewer
+                id="model5"
+                class="model-viewer"
+                ios-src="model/tonbi.usdz"
+                src="model/tonbi.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model5-btn">
+                    START AR
+                </button>
+
+            </div>
+
+            <div class="ar-item">
+                <model-viewer
+                id="model6"
+                class="model-viewer model6"
+                ios-src="model/cape.usdz"
+                src="model/cape.glb"
+                preload="preload"
+                camera-controls="camera-controls"
+                shadow-intensity="1"
+                ar="ar"
+                ar-modes="webxr scene-viewer quick-look fallback"
+                ar-scale="fixed"
+                alt="3D model"
+                >
+                <button class="custom-ar-button" slot="ar-button"></button>
+                </model-viewer>
+                <button class="model-viewer-btn" id="model6-btn">
+                    START AR
+                </button>
+
+            </div> -->
+
+        </div>
+
+        <p class="ar-sentence">
+            ECサイト上でよりリアルな商品の閲覧体験ができるオンラインカタログサービス。
+        </p>
+
+        <div class="process">
+            <div class="process-item">
+                <img src="image/photography-3d.png" alt="写真撮影-3">
+                <div class="process-style">
+                    <p class="process-top">写真撮影</p>
+                    <p class="process-sentence">商品の撮影を行います</p>
+                </div>
+            </div>
+            
+            <div class="arrow">
+                <img src="image/arrow-right.png" class="arrow-right" alt="右">
+                <img src="image/arrow-bottom.png" class="arrow-bottom" alt="下">
+            </div>
+
+            <div class="process-item">
+                <img src="image/modeling-3d.png" alt="フォトグラメトリ-3">
+                <div class="process-style">
+                    <p class="process-top">フォトグラメトリ</p>
+                    <p class="process-sentence">撮影した写真から３Ｄモデルを制作します</p>
+                </div>
+            </div>
+            
+            <div class="arrow">
+                <img src="image/arrow-right.png" class="arrow-right" alt="右">
+                <img src="image/arrow-bottom.png" class="arrow-bottom" alt="下">
+            </div>
+
+            <div class="process-item">
+                <img src="image/ar-3d.png" alt="AR化-3">
+                <div class="process-style">
+                    <p class="process-top">AR化</p>
+                    <p class="process-sentence">ARを表示するサイトを作成いたします</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-btn">
+            <a href="https://forms.gle/yozEzepmSjN2Hodr9">CONTACT</a>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p><small>&copy;wakuzawa-inc.All Rights Reserved</small></p>
+    </footer>
+
+    <!-- bodyタグ内の任意の位置に配置-->
+    <script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script>
+        document.querySelector('#model1-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model1");
+            modelViewer.activateAR();
+        });
+
+        document.querySelector('#model2-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model2");
+            modelViewer.activateAR();
+        });
+        document.querySelector('#model3-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model3");
+            modelViewer.activateAR();
+        });
+
+        document.querySelector('#model4-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model4");
+            modelViewer.activateAR();
+        });
+        document.querySelector('#model5-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model5");
+            modelViewer.activateAR();
+        });
+
+        document.querySelector('#model6-btn').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("#model6");
+            modelViewer.activateAR();
+        });
+
+    </script>
+
+
+    
+    
+</body>
+</html>

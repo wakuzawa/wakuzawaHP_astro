@@ -1,0 +1,386 @@
+@charset "UFT-8";
+
+@mixin title {
+  margin: 0 27.3vw 3.7vh 0;
+  padding-top: 20vh;
+  border-bottom: 1px solid grey;
+  font-size: 2vw;
+}
+@mixin contact-btn {
+  height: 6.9vh;
+  width: 26.6vw;
+  margin: 7vh 0 7vh auto; /*ボタンを右寄せ*/
+  background-color: #000;
+  opacity: 1;
+  cursor: pointer; /*カーソル乗せると指になる*/
+}
+@mixin contact-btn-a {
+  height: 6.9vh;
+  width: 26.6vw;
+  text-align: center;
+  line-height: 6.9vh; /*テキストを縦に中央揃え*/
+  color: #fff;
+  font-size: 2.5vw;
+}
+$img-width: 17.1vw;
+$mv-height: 20.5vw;
+
+@mixin title-m {
+  margin: 0 0 3.7vh 0;
+  padding-top: 13vh;
+  border-bottom: 1px solid grey;
+  font-size: 5vw;
+}
+$img-width-m: 20vw;
+
+/* 共通部分 */
+html {
+  font-size: 1rem;
+  body {
+    font-family: sans-serif, "メイリオ", "Meiryo";
+    line-height: 1.7;
+    text-align: left;
+    & * {
+      box-sizing: border-box; /*padding,borderはwidthに含む*/
+    }
+
+    & * a {
+      text-decoration: none; /*下線引かない*/
+      display: block; /*ブロック要素に*/
+      color: #000;
+    }
+    img {
+      max-width: 100%; /*画像がはみ出さないように*/
+    }
+
+    ul {
+      list-style-type: none; /*listに黒点つけない*/
+    }
+
+    header {
+      height: 15vh;
+      width: 100vw;
+      background-color: #fff;
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      .wakuzawa-logo {
+        margin: 6.6vh auto auto 5.3vw;
+        width: 18vw;
+      }
+
+      .header-list {
+        margin-right: 0.8vw;
+        width: 32.4vw;
+        display: flex;
+        align-items: flex-end; /*ブロックを下揃え*/
+        justify-content: flex-end; /*右揃え*/
+        li {
+          margin-right: 3.6vw;
+          a {
+            font-size: 1.7vw;
+            color: #000;
+          }
+        }
+      }
+    } //header
+
+    main {
+      margin: 0 22.1vw 0 23.3vw;
+      .dressr-title {
+        @include title;
+      }
+      .dressr-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        img {
+          width: $img-width;
+          height: 32vw;
+        }
+      }
+
+      .instagram-btn {
+        height: 4.1vh;
+        width: 15.2vw;
+        margin-top: 0.9vh;
+        text-align: center; /*左右真ん中寄せ*/
+        line-height: 4.1vh; /*上下真ん中寄せ*/
+        background-color: #727272;
+        font-size: 1.3vw;
+        opacity: 1;
+        cursor: pointer; /*カーソル乗せると指になる*/
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          position: relative;
+          top: 5px;
+          box-shadow: none;
+        }
+
+        a {
+          color: #fff;
+        }
+      } //instagram-btn
+
+      .dressr-sentence {
+        margin-top: 4.6vh;
+      }
+
+      .process {
+        margin-top: 3.7vh;
+        display: flex;
+        justify-content: space-between;
+        .arrow {
+          .arrow-bottom {
+            display: none;
+          }
+        }
+
+        .process-item {
+          .process-style {
+            .process-top {
+              font-size: 1.3vw;
+              font-weight: bold;
+            }
+            .process-sentence {
+              margin-top: 2.2vh;
+              font-size: 1.1vw;
+            }
+          } //process-style
+        } //process-item
+      } //process
+
+      .contact-btn {
+        @include contact-btn;
+        a {
+          @include contact-btn-a;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          position: relative;
+          top: 5px;
+          box-shadow: none;
+        }
+      } //contact-btn
+
+      .ar-title {
+        @include title;
+      }
+
+      .ar-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .ar-item {
+          /* widthやheightの値は要カスタマイズ -----------------------------------------------*/
+          .model-viewer {
+            width: $img-width;
+            height: $mv-height;
+            background-color: #fff;
+            .custom-ar-button {
+              width: 0;
+              height: 0;
+            }
+          } //model-viewer
+        } //ar-item
+      } //ar-container
+
+      .ar-sentence {
+        margin-top: 4vw;
+      }
+    } //main
+
+    .contact-btn {
+      @include contact-btn;
+      a {
+        @include contact-btn-a;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        position: relative;
+        top: 5px;
+        box-shadow: none;
+      }
+    } //contact-btn
+
+    footer {
+      margin-top: 10vh;
+      background-color: #ccc;
+      color: black;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } //footer
+  } //body
+} //html
+
+@media (max-width: 600px) {
+  /*----------------------------------------------------------------------------------------*/
+  html {
+    body {
+      header {
+        height: 9.2vh;
+        .wakuzawa-logo {
+          width: 25vw;
+          margin: auto auto 1vh 5.3vw;
+        }
+        .header-list {
+          margin-right: 0.8vw;
+          margin-bottom: 2vh;
+          width: 60vw;
+          li {
+            margin-right: 3.6vw;
+            a {
+              font-size: 3vw;
+            }
+          }
+        }
+      } //header
+
+      main {
+        margin: 0 18vw 0 18vw;
+        .dressr-title {
+          @include title-m;
+        }
+        .dressr-container {
+          img {
+            width: $img-width-m;
+          }
+        }
+
+        .instagram-btn {
+          width: 32vw;
+          font-size: 3vw;
+          box-shadow: 0 4px #dddddd;
+
+          &:active {
+            top: 3px;
+          }
+        } //instagram-btn
+
+        .dressr-sentence {
+          margin-top: 3vh;
+          font-size: 3vw;
+        }
+
+        .process {
+          display: block; /*フレックスボックス解除*/
+          margin-top: 6vh;
+          .arrow {
+            .arrow-right {
+              display: none; /*右矢印削除*/
+            }
+            .arrow-bottom {
+              display: block;
+            }
+          } //arrow
+
+          .process-item {
+            display: flex;
+            justify-content: space-between; /*両端揃えて均等配置*/
+            align-items: center; /*ブロックを中段揃え*/
+            img {
+              width: 31vw;
+            }
+            .process-style {
+              width: 31vw;
+              .process-top {
+                font-size: 3.5vw;
+              }
+              .process-sentence {
+                margin-top: 2vh;
+                font-size: 3vw;
+              }
+            } //process-style
+          } //process-item
+        } //process
+
+        .contact-btn {
+          height: 5vh;
+          width: 32vw;
+          margin: 4vh 0 7vh auto; /*ボタンを右寄せ*/
+          box-shadow: 0 3px #525252;
+          a {
+            height: 5vh;
+            width: 32vw;
+            line-height: 5vh; /*テキストを縦に中央揃え*/
+            font-size: 4vw;
+          }
+
+          &:active {
+            top: 3px;
+          }
+        } //contact-btn
+
+        .ar-title {
+          @include title-m;
+        }
+
+        .ar-container {
+          display: block; /*flexbox解除*/
+          .ar-item {
+            /* widthやheightの値は要カスタマイズ -----------------------------------------------*/
+            .model-viewer {
+              width: 64vw;
+              height: 75vw;
+              margin-bottom: 4px;
+              background-color: #fff;
+              .custom-ar-button {
+                width: 0;
+                height: 0;
+              }
+            }
+            .model-viewer-btn {
+              display: block;
+              width: 64vw;
+              height: 5vh;
+              font-weight: bold;
+              line-height: 5vh;
+              color: white;
+              background-color: #525252;
+              border: none;
+            }
+          } //ar-item
+        } //ar-container
+      } //main
+    } //body
+  } //html
+} //media
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .custom-ar-button {
+    width: 0;
+    height: 0;
+  }
+  .model-viewer-btn {
+    display: block;
+    width: $img-width;
+    height: 5vh;
+    font-weight: bold;
+    line-height: 5vh;
+    color: white;
+    background-color: #525252;
+    border: none;
+  } //model-viewer-btn
+}
+@media (min-width: 1025px) {
+  .model-viewer-btn {
+    display: none;
+  } //model-viewer-btn
+}
