@@ -1,0 +1,125 @@
+body {
+  background-color: #2620FF;
+}
+
+body header {
+  height: 130px;
+  width: 100%;
+  background-color: #2620FF;
+}
+
+@media (max-width: 680px) {
+  body header {
+    height: 82px;
+  }
+}
+
+body header .wakuzawa_logo {
+  height: 130px;
+  width: 420px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 680px) {
+  body header .wakuzawa_logo {
+    height: 82px;
+    width: 260px;
+  }
+}
+
+body header .wakuzawa_logo a {
+  position: absolute;
+  bottom: 0;
+}
+
+body header .wakuzawa_logo a img {
+  width: 100%;
+}
+
+body main {
+  width: 100%;
+  margin-top: 50px;
+}
+
+@media (max-width: 680px) {
+  body main {
+    margin-top: 20px;
+  }
+}
+
+body main .astro_img {
+  width: 460px;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  body main .astro_img {
+    width: 265px;
+  }
+}
+
+body main .astro_img img {
+  width: 100%;
+}
+
+body main .menu {
+  width: 520px;
+  margin: 70px auto 0 auto;
+}
+
+@media (max-width: 680px) {
+  body main .menu {
+    width: 300px;
+    margin: 40px auto 0 auto;
+  }
+}
+
+body main .menu div {
+  position: relative;
+}
+
+body main .menu div .active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .menu div .active:hover {
+  opacity: 1;
+}
+
+body main .menu div a img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+body footer {
+  width: 100%;
+}
+
+body footer .copyright {
+  width: 520px;
+  margin: 20px auto 0 auto;
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  body footer .copyright {
+    width: 300px;
+  }
+}
+
+body footer .copyright img {
+  width: 260px;
+}
+
+@media (max-width: 680px) {
+  body footer .copyright img {
+    width: 150px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
